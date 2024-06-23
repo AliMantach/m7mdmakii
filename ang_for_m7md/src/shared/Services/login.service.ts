@@ -19,7 +19,7 @@ export class LoginService {
 );
 
     if (foundTrainer) {
-    
+      
       return true;
     } else {
       return false;

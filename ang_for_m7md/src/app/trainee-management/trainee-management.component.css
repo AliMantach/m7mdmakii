@@ -63,5 +63,13 @@
   color: #343a40;
 }
 
+.add{
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: gray;
+  color: white;
+}
+
 
 
