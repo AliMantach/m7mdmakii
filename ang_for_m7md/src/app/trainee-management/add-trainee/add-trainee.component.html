@@ -6,36 +6,43 @@
           <form action="#">
             <div class="user-details">
               <div class="input-box">
-                <span class="details">Full Name</span>
-                <input type="text" placeholder="Enter your name" required />
+                <span class="details">Id</span>
+                <input type="text" placeholder="Enter your Id" required #id />
               </div>
-             
+              <div class="input-box">
+                <span class="details">Full Name</span>
+                <input type="text" placeholder="Enter your name" required #fullName />
+              </div>
+              <div class="input-box">
+                <span class="details">Details</span>
+                <input type="text" placeholder="Enter your name" required #details />
+              </div>
                
               <div class="input-box">
                 <span class="details">age</span>
-                <input type="text" placeholder="Enter your age" required />
+                <input type="text" placeholder="Enter your age" required #age />
               </div>
               <div class="input-box">
                 <span class="details">Phone Number</span>
-                <input type="text" placeholder="Enter yourPhone Number" required />
+                <input type="text" placeholder="Enter yourPhone Number" required #phoneNumber />
               </div>
               <div class="input-box">
                 <span class="details">weight</span>
-                <input type="text" placeholder="Enter your weight" required />
+                <input type="text" placeholder="Enter your weight" required #weight />
               </div>
               <div class="input-box">
                 <span class="details">height</span>
-                <input type="text" placeholder="Enter your height" required />
+                <input type="text" placeholder="Enter your height" required #height/>
               </div>
               <div class="input-box">
                 <span class="details">Physical limitation</span>
-                <input type="text" placeholder="Enter your Physical limitation if you have"  />
+                <input type="text" placeholder="Enter your Physical limitation if you have" #physicalLimitation />
               </div>
             </div>
             <div class="gender-details">
-              <input type="radio" name="gender" id="dot-1" />
-              <input type="radio" name="gender" id="dot-2" />
-              <input type="radio" name="gender" id="dot-3" />
+              <input type="radio" name="gender" id="dot-1" (change)="onChange($event)" />
+              <input type="radio" name="gender" id="dot-2" (change)="onChange($event)"/>
+              <input type="radio" name="gender" id="dot-3" (change)="onChange($event)"/>
               <span class="gender-title">Gender</span>
               <div class="category">
                 <label for="dot-1">
@@ -53,7 +60,7 @@
               </div>
             </div>
             <div class="button">
-              <input type="submit" value="Register" />
+              <input type="button" value="Register" (click)="addTrainee()"/>
             </div>
           </form>
         </div>
