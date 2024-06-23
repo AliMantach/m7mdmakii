@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class LoginService {
-  private trainers = [
+  public trainers = [
     { name: 'trainer1', password: '123' },
     { name: 'trainer2', password: '1234' },
     { name: 'trainer3', password: '12345' },
@@ -14,13 +14,12 @@ export class LoginService {
   constructor(private router: Router) {}
 
   login(userName: string, passWord: string): boolean {
-    const foundTrainer = this.trainers.find((trainer) => {
-      trainer.name === userName && trainer.password === passWord;
-
-      this.router.navigateByUrl('/traineeManagement');
-    });
+    let foundTrainer = this.trainers.find((trainer) => 
+      trainer.name === userName && trainer.password === passWord
+);
 
     if (foundTrainer) {
+    
       return true;
     } else {
       return false;
