@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { LoginService } from '../../shared/Services/login.service'; // Adjust the path
+import { LoginService } from '../../shared/Services/login.service'; 
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({

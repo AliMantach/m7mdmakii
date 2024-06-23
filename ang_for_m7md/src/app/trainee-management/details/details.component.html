@@ -1,0 +1,13 @@
+<div class="modal" *ngIf="selectedTrainee">
+  <div class="modal-content">
+    <span class="close" (click)="close()">&times;</span>
+    <h2>{{ selectedTrainee.fullName }}</h2>
+    <p>Age: {{ selectedTrainee.age }}</p>
+    <p>Phone: {{ selectedTrainee.phoneNumber }}</p>
+    <p>Height: {{ selectedTrainee.height }}</p>
+    <p>Weight: {{ selectedTrainee.weight }}</p>
+    <p>Details: {{ selectedTrainee.details }}</p>
+    <p>Email: {{ selectedTrainee.email }}</p>
+    <p>Problems: {{ selectedTrainee.physicalLimitation }}</p>
+  </div>
+</div>

@@ -2,9 +2,7 @@
   <div class="container">
     <h2 class="display-5 fw-bold mb-4">Trainee List</h2>
     <div class="row">
-      <!-- Repeat the following card structure for each project -->
-
-      <div class="col-lg col-sm-6 mt-4">
+      <div class="col-lg col-sm-6 mt-4" *ngFor="let trainee of allTrainee">
         <div class="card">
           <img
             src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png"
@@ -12,51 +10,22 @@
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title fw-bold">Hassan jaffal</h5>
+            <h5 class="card-title fw-bold">{{ trainee.fullName }}</h5>
             <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {{ trainee.details }}
             </p>
-            <a href="#" class="btn btn-outline-dark">Details</a>
+            <button (click)="viewDetails(trainee)">Details</button>
           </div>
         </div>
       </div>
-      <div class="col-lg col-sm-6 mt-4">
-        <div class="card">
-          <img
-            src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Ali mantach</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-outline-dark">Details</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg col-sm-6 mt-4">
-        <div class="card">
-          <img
-            src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title fw-bold">Mohamad Makke</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-outline-dark">Details</a>
-          </div>
-        </div>
-      </div>
-    
     </div>
-    <input type="button" value="Click to open Add trainee page" name="add" class="add" (click)="openAddTrainee()">
+    <input
+      type="button"
+      value="Click to open Add trainee page"
+      name="add"
+      class="add"
+      (click)="openAddTrainee()"
+    />
   </div>
 </section>
+<app-details  [selectedTrainee]="selectedTrainee"></app-details>

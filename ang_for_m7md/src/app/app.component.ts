@@ -8,7 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   standalone: true,
   imports: [RouterOutlet , TraineeManagementComponent,LoginPageComponent,NotFoundComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
  

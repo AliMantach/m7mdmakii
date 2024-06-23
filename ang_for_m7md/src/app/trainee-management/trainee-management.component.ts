@@ -1,15 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TraineeManagementService } from '../../shared/Services/trainee-management.service';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { DetailsComponent } from './details/details.component';
 @Component({
   selector: 'trainee-management',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterLink,DetailsComponent],
   templateUrl: './trainee-management.component.html',
-  styleUrl: './trainee-management.component.css'
+  styleUrl: './trainee-management.component.css',
 })
 export class TraineeManagementComponent {
-constructor(public traineeManagement : TraineeManagementService) { }
-openAddTrainee() {
-  this.traineeManagement.openAddTrainee();
-}
+  selectedTrainee: any = null;
+
+  constructor(public traineeManagement: TraineeManagementService) {}
+
+  traineeService = inject(TraineeManagementService);
+  allTrainee = this.traineeService.trainees;
+
+  openAddTrainee() {
+    this.traineeManagement.openAddTrainee();
+  }
+
+  viewDetails(trainee: any) {
+    this.selectedTrainee = trainee;
+  }
 }
