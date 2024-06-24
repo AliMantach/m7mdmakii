@@ -32,6 +32,27 @@ export class AdminManagementService {
         password: "password789",
         role: "admin",
         image: "bobjohnson.jpg"
-    }
+    },
+
+    {
+        id: 4,
+        name: "Bob Johnson",
+        email: "bobjohnson@example.com",
+        password: "password789",
+        role: "trainer",
+        image: "bobjohnson.jpg"
+    },
+
+    {
+        id: 5,
+        name: "Bob Johnson",
+        email: "bobjohnson@example.com",
+        password: "password789",
+        role: "trainer",
+        image: "bobjohnson.jpg"
+    },
+
+
+
 ];
 }
