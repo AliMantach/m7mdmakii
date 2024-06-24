@@ -1,42 +1,49 @@
-import { Component , inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TraineeManagementService } from '../../../shared/Services/trainee-management.service';
-import { ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
+import { Trainee } from '../../../shared/models/trainee';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-add-trainee',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './add-trainee.component.html',
-  styleUrl: './add-trainee.component.scss'
+  styleUrl: './add-trainee.component.scss',
 })
 export class AddTraineeComponent {
-constructor(private traineeManagementService: TraineeManagementService) {}
-gender : string ;
-onChange(gender){
-this.gender = gender;
-}
-router : Router = inject(Router);
-@ViewChild('fullName') fullName: string; 
-@ViewChild('age') age : number;
-@ViewChild('email') email: string; 
-@ViewChild('phone') phone: string; 
-@ViewChild('weight') weight: number; 
-@ViewChild('height') height: number; 
-@ViewChild('physicalLimitation') physicalLimitation : string; 
-@ViewChild('details') details : string;
-@ViewChild('id') id :number;
-@ViewChild('status') status : boolean
-addTrainee(){
-  this.traineeManagementService.addTrainee(this.id,this.fullName,this.age,this.phone,this.height , this.weight , this.physicalLimitation , this.details ,this.email,this.gender , this.status);
-  this.fullName = "";
-  this.email = "";
-  this.phone = "";
-  this.weight = null;
-  this.height = null;
-  this.physicalLimitation = "";
-  this.gender = "";
-  this.age = null;
-  this.details = "";
-  this.router.navigate(['/traineeManagement']);
-}
+  router : Router = inject(Router)
+  newTrainee: any = {
+    fullName: '',
+    age: null,
+    phoneNumber: '',
+    height: null,
+    weight: null,
+    details: '',
+    email: '',
+    physicalLimitation: '',
+    status: true
+  };
+
+  constructor(private traineeService: TraineeManagementService) {}
+
+  addTrainee() {
+    this.traineeService.addTrainee(this.newTrainee);
+    this.router.navigate(['traineeManagement']);
+    this.resetForm();
+  }
+
+  resetForm() {
+    this.newTrainee = {
+      fullName: '',
+      age: null,
+      phoneNumber: '',
+      height: null,
+      weight: null,
+      details: '',
+      email: '',
+      physicalLimitation: '',
+      status: true
+    };
+  }
 }

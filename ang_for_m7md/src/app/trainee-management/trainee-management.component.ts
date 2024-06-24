@@ -3,10 +3,11 @@ import { TraineeManagementService } from '../../shared/Services/trainee-manageme
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { DetailsComponent } from '../../app/trainee-management/details/details.component';
+import { AddTraineeComponent } from './add-trainee/add-trainee.component';
 @Component({
   selector: 'trainee-management',
   standalone: true,
-  imports: [CommonModule, RouterLink, DetailsComponent],
+  imports: [CommonModule, RouterLink, DetailsComponent, AddTraineeComponent],
   templateUrl: './trainee-management.component.html',
   styleUrls: ['./trainee-management.component.css'],
 })

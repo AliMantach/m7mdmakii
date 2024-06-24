@@ -77,38 +77,12 @@ export class TraineeManagementService {
   openAddTrainee() {
     this.router.navigate(['/add-trainee']);
   }
-  addTrainee(
-    id: number,
-    fullName: string,
-    age: number,
-    phoneNumber: string,
-    height: number,
-    weight: number,
-    physicalLimitation: string,
-    details: string,
-    email: string,
-    gender: string,
-    status: boolean
-  ) {
-    this.trainees.push(
-      new Trainee(
-        id,
-        fullName,
-        age,
-        phoneNumber,
-        height,
-        weight,
-        physicalLimitation,
-        details,
-        email,
-        gender,
-        status
-      )
-    );
+  addTrainee(newTrainee: Trainee) {
+    this.trainees.push(newTrainee);
   }
 
   updateTrainee(updatedTrainee: Trainee) {
-    const index = this.trainees.findIndex(t => t.id === updatedTrainee.id);
+    const index = this.trainees.findIndex((t) => t.id === updatedTrainee.id);
     if (index !== -1) {
       this.trainees[index] = updatedTrainee;
     }

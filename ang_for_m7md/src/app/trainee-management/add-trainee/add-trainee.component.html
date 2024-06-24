@@ -1,74 +1,50 @@
-<div class="container">
-    <div class="container1">
-      <div class="container2">
-        <div class="title">Registration</div>
-        <div class="content">
-          <form action="#">
-            <div class="user-details">
-              <div class="input-box">
-                <span class="details">Id</span>
-                <input type="text" placeholder="Enter your Id" required #id />
-              </div>
-              <div class="input-box">
-                <span class="details">Full Name</span>
-                <input type="text" placeholder="Enter your name" required #fullName />
-              </div>
-              <div class="input-box">
-                <span class="details">Details</span>
-                <input type="text" placeholder="Enter your name" required #details />
-              </div>
-               
-              <div class="input-box">
-                <span class="details">age</span>
-                <input type="text" placeholder="Enter your age" required #age />
-              </div>
-              <div class="input-box">
-                <span class="details">Phone Number</span>
-                <input type="text" placeholder="Enter yourPhone Number" required #phoneNumber />
-              </div>
-              <div class="input-box">
-                <span class="details">weight</span>
-                <input type="text" placeholder="Enter your weight" required #weight />
-              </div>
-              <div class="input-box">
-                <span class="details">height</span>
-                <input type="text" placeholder="Enter your height" required #height/>
-              </div>
-              <div class="input-box">
-                <span class="details">Physical limitation</span>
-                <input type="text" placeholder="Enter your Physical limitation if you have" #physicalLimitation />
-              </div>
-              <div class="input-box">
-                <span class="details">Status</span>
-                <input type="text" placeholder="Status" #status />
-              </div>
-            </div>
-            <div class="gender-details">
-              <input type="radio" name="gender" id="dot-1" (change)="onChange($event)" />
-              <input type="radio" name="gender" id="dot-2" (change)="onChange($event)"/>
-              <input type="radio" name="gender" id="dot-3" (change)="onChange($event)"/>
-              <span class="gender-title">Gender</span>
-              <div class="category">
-                <label for="dot-1">
-                  <span class="dot one"></span>
-                  <span class="gender">Male</span>
-                </label>
-                <label for="dot-2">
-                  <span class="dot two"></span>
-                  <span class="gender">Female</span>
-                </label>
-                <label for="dot-3">
-                  <span class="dot three"></span>
-                  <span class="gender">Prefer not to say</span>
-                </label>
-              </div>
-            </div>
-            <div class="button">
-              <input type="button" value="Register" (click)="addTrainee()"/>
-            </div>
-          </form>
-        </div>
-      </div>
+<!-- add-trainee.component.html -->
+<div class="container mt-4">
+  <h2>Add New Trainee</h2>
+  <form #addTraineeForm="ngForm" (ngSubmit)="addTrainee()">
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" class="form-control" id="fullName" [(ngModel)]="newTrainee.fullName" name="fullName" required>
     </div>
-  </div>
-  
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" class="form-control" id="age" [(ngModel)]="newTrainee.age" name="age" required>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="newTrainee.phoneNumber" name="phoneNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="height">Height</label>
+      <input type="number" class="form-control" id="height" [(ngModel)]="newTrainee.height" name="height" required>
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight</label>
+      <input type="number" class="form-control" id="weight" [(ngModel)]="newTrainee.weight" name="weight" required>
+    </div>
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea class="form-control" id="details" [(ngModel)]="newTrainee.details" name="details" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="newTrainee.email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <input type="text" class="form-control" id="gender" [(ngModel)]="newTrainee.gender" name="gender" required>
+    </div>
+    <div class="form-group">
+      <label for="physicalLimitation">Problems</label>
+      <textarea class="form-control" id="physicalLimitation" [(ngModel)]="newTrainee.physicalLimitation" name="physicalLimitation" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select class="form-control custom-select" id="status" [(ngModel)]="newTrainee.status" name="status" required>
+        <option [ngValue]="true">Active</option>
+        <option [ngValue]="false">Inactive</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Add Trainee</button>
+  </form>
+</div>
