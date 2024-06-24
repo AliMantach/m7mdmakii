@@ -2,13 +2,13 @@ import { Component, inject } from '@angular/core';
 import { TraineeManagementService } from '../../shared/Services/trainee-management.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { DetailsComponent } from './details/details.component';
+import { DetailsComponent } from '../../app/trainee-management/details/details.component';
 @Component({
   selector: 'trainee-management',
   standalone: true,
-  imports: [CommonModule, RouterLink,DetailsComponent],
+  imports: [CommonModule, RouterLink, DetailsComponent],
   templateUrl: './trainee-management.component.html',
-  styleUrl: './trainee-management.component.css',
+  styleUrls: ['./trainee-management.component.css'],
 })
 export class TraineeManagementComponent {
   selectedTrainee: any = null;
@@ -24,5 +24,9 @@ export class TraineeManagementComponent {
 
   viewDetails(trainee: any) {
     this.selectedTrainee = trainee;
+  }
+
+  closeDetails() {
+    this.selectedTrainee = null;
   }
 }

@@ -25,8 +25,9 @@ router : Router = inject(Router);
 @ViewChild('physicalLimitation') physicalLimitation : string; 
 @ViewChild('details') details : string;
 @ViewChild('id') id :number;
+@ViewChild('status') status : boolean
 addTrainee(){
-  this.traineeManagementService.addTrainee(this.id,this.fullName,this.age,this.phone,this.height , this.weight , this.physicalLimitation , this.details ,this.email,this.gender);
+  this.traineeManagementService.addTrainee(this.id,this.fullName,this.age,this.phone,this.height , this.weight , this.physicalLimitation , this.details ,this.email,this.gender , this.status);
   this.fullName = "";
   this.email = "";
   this.phone = "";

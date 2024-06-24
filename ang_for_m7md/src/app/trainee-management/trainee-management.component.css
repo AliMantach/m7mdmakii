@@ -31,16 +31,13 @@
   color: #343a40;
 }
 
-/* styles.css */
 
-/* Set up the grid container */
 .row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column width as needed */
-  gap: 20px; /* Add spacing between cards */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 20px; 
 }
 
-/* Style the card */
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -69,6 +66,48 @@
   padding: 4px;
   background-color: gray;
   color: white;
+}
+.status {
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.status.active {
+  color: white;
+  background-color: green;
+}
+
+.status.inactive {
+  color: white;
+  background-color: red;
+}
+
+
+.btn-details {
+  margin-top: 10px;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-details:hover {
+  background: linear-gradient(to right, #0056b3, #007bff);
+}
+
+.btn-details:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btn-details:active {
+  background: linear-gradient(to right, #003a75, #004a99);
 }
 
 

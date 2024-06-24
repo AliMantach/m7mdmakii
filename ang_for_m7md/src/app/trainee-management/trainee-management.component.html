@@ -4,28 +4,20 @@
     <div class="row">
       <div class="col-lg col-sm-6 mt-4" *ngFor="let trainee of allTrainee">
         <div class="card">
-          <img
-            src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png"
-            class="card-img-top"
-            alt="..."
-          />
+          <img src="https://codingyaar.com/wp-content/uploads/image-plcaeholder.png" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title fw-bold">{{ trainee.fullName }}</h5>
-            <p class="card-text">
-              {{ trainee.details }}
+            <p class="card-text">{{ trainee.details }}</p>
+            <p class="status" [ngClass]="{'active': trainee.status, 'inactive': !trainee.status}">
+              {{ trainee.status ? 'Active' : 'Inactive' }}
             </p>
-            <button (click)="viewDetails(trainee)">Details</button>
+            <br>
+            <button class="btn btn-primary btn-details" (click)="viewDetails(trainee)">Details</button>
           </div>
         </div>
       </div>
     </div>
-    <input
-      type="button"
-      value="Click to open Add trainee page"
-      name="add"
-      class="add"
-      (click)="openAddTrainee()"
-    />
+    <input type="button" value="Click to open Add trainee page" name="add" class="add" (click)="openAddTrainee()" />
   </div>
 </section>
-<app-details  [selectedTrainee]="selectedTrainee"></app-details>
+<app-details [selectedTrainee]="selectedTrainee" (closeDetails)="closeDetails()"></app-details>

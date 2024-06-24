@@ -2,12 +2,50 @@
   <div class="modal-content">
     <span class="close" (click)="close()">&times;</span>
     <h2>{{ selectedTrainee.fullName }}</h2>
-    <p>Age: {{ selectedTrainee.age }}</p>
-    <p>Phone: {{ selectedTrainee.phoneNumber }}</p>
-    <p>Height: {{ selectedTrainee.height }}</p>
-    <p>Weight: {{ selectedTrainee.weight }}</p>
-    <p>Details: {{ selectedTrainee.details }}</p>
-    <p>Email: {{ selectedTrainee.email }}</p>
-    <p>Problems: {{ selectedTrainee.physicalLimitation }}</p>
+    <form *ngIf="isEditing; else viewMode" #editForm="ngForm" (ngSubmit)="saveDetails()">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" id="fullName" [(ngModel)]="editedTrainee.fullName" name="fullName" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" [(ngModel)]="editedTrainee.age" name="age" required>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="editedTrainee.phoneNumber" name="phoneNumber" required>
+      </div>
+      <div class="form-group">
+        <label for="height">Height</label>
+        <input type="number" class="form-control" id="height" [(ngModel)]="editedTrainee.height" name="height" required>
+      </div>
+      <div class="form-group">
+        <label for="weight">Weight</label>
+        <input type="number" class="form-control" id="weight" [(ngModel)]="editedTrainee.weight" name="weight" required>
+      </div>
+      <div class="form-group">
+        <label for="details">Details</label>
+        <textarea class="form-control" id="details" [(ngModel)]="editedTrainee.details" name="details" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="editedTrainee.email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="physicalLimitation">Problems</label>
+        <textarea class="form-control" id="physicalLimitation" [(ngModel)]="editedTrainee.physicalLimitation" name="physicalLimitation" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Save</button>
+    </form>
+    <ng-template #viewMode>
+      <p>Age: {{ selectedTrainee.age }}</p>
+      <p>Phone: {{ selectedTrainee.phoneNumber }}</p>
+      <p>Height: {{ selectedTrainee.height }}</p>
+      <p>Weight: {{ selectedTrainee.weight }}</p>
+      <p>Details: {{ selectedTrainee.details }}</p>
+      <p>Email: {{ selectedTrainee.email }}</p>
+      <p>Problems: {{ selectedTrainee.physicalLimitation }}</p>
+      <button class="btn btn-secondary mt-3" (click)="toggleEdit()">Edit</button>
+    </ng-template>
   </div>
 </div>
