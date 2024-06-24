@@ -1,0 +1,71 @@
+section.projects .card {
+    max-width: 17rem;
+    text-align: left;
+  }
+  section.projects .card img {
+    max-width: 70%;
+    margin: 1rem auto;
+  }
+
+ 
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.btn-outline-dark {
+  border-color: #343a40;
+  color: #343a40;
+}
+
+/* styles.css */
+
+/* Set up the grid container */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column width as needed */
+  gap: 20px; /* Add spacing between cards */
+}
+
+/* Style the card */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.btn-outline-dark {
+  border-color: #343a40;
+  color: #343a40;
+}
+
+.add{
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: gray;
+  color: white;
+}
